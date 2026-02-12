@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>О нас — WAKA OFF KAZAKH</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/logo.png">
+<link rel="apple-touch-icon" href="/img/logo.png">
+
+<style>
+:root {
+  --bg: #0f0f12;
+  --card: #16161b;
+  --text: #f5f5f7;
+  --muted: #9ca3af;
+  --accent: #ffffff;
+  --border: #26262c;
+  --success: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 750px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-bottom: 35px;
+}
+
+.section h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 30px 0;
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  flex: 1;
+  min-width: 150px;
+  background: #111;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.guarantee {
+  background: #111;
+  border: 1px solid var(--success);
+  border-radius: 16px;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.faq-question {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 14px;
+  color: var(--muted);
+  transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: block;
+  margin-top: 30px;
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--accent);
+  color: #000;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+
+            <h1>О нас</h1>
+            <div class="subtitle">Надёжность • Оригинальность • Прозрачность</div>
+
+            <div class="section">
+                <div class="text">
+                    WAKA OFF KAZAKH — это команда, которая делает упор на качество продукции
+                    и высокий уровень сервиса. Мы ценим доверие клиентов и строим работу максимально прозрачно.
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section">
+                <h2>Наши показатели</h2>
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">% Оригинальность</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Минут средний ответ</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="365">0</div>
+                        <div class="stat-label">Дней в году работаем</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section">
+                <h2>Гарантия возврата</h2>
+                <div class="guarantee">
+                    Если товар имеет производственный дефект или проблему,
+                    вы можете обратиться к нам — мы рассмотрим ситуацию и предложим решение.
+                    Наша цель — долгосрочное доверие клиентов.
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section">
+                <h2>Частые вопросы</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                    Это оригинальная продукция?
+                    <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                    Да, мы работаем только с проверенными поставщиками.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                    Как быстро отвечаете?
+                    <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                    В среднем 5–15 минут в рабочее время.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                    Можно получить консультацию?
+                    <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                    Да, менеджер подробно проконсультирует вас перед покупкой.
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="/consultation.html" class="btn">
+            Получить консультацию
+            </a>
+
+        </div>
+    </div>
+
+<script>
+// Анимация счётчиков
+const counters = document.querySelectorAll('.stat-number');
+const speed = 40;
+
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const inc = Math.ceil(target / speed);
+
+    if (count < target) {
+      counter.innerText = count + inc;
+      setTimeout(updateCount, 30);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  updateCount();
+});
+
+// Раскрывающийся FAQ
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("active");
+  });
+});
+</script>
+
+</body>
+</html>
