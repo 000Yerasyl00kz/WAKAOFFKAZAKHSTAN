@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Поддержка — WAKA OFF KAZAKH</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/logo.png">
+<link rel="apple-touch-icon" href="/img/logo.png">
+
+<style>
+:root {
+  --bg: #0f0f12;
+  --card: #16161b;
+  --text: #f5f5f7;
+  --muted: #9ca3af;
+  --accent: #ffffff;
+  --border: #26262c;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;   /* центр по вертикали */
+  min-height: 100vh;     /* высота на весь экран */
+  padding: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.support-item {
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.support-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.btn {
+  display: block;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--accent);
+  color: #000;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>Поддержка</h1>
+            <div class="subtitle">
+            Мы всегда готовы помочь вам
+            </div>
+
+            <div class="support-item">
+                <strong>Время работы</strong>
+                Ежедневно с 10:00 до 22:00
+            </div>
+
+            <div class="support-item">
+                <strong>Ответ менеджера</strong>
+                Обычно отвечаем в течение 5–15 минут
+            </div>
+
+            <div class="support-item">
+                <strong>По каким вопросам можно обратиться?</strong>
+                • Помощь с выбором<br>
+                • Информация о наличии<br>
+                • Консультация по продукции<br>
+                • Проблемы с заказом
+            </div>
+
+            <a href="/consultation.html" class="btn">
+            Связаться с менеджером
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
