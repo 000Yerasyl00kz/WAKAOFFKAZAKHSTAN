@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WAKA OFF KAZAKH — Магазин</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/logo.png">
+<link rel="apple-touch-icon" href="/img/logo.png">
+
+<style>
+    :root {
+  --bg: #0f0f12;
+  --card: #16161b;
+  --text: #f5f5f7;
+  --muted: #9ca3af;
+  --accent: #ffffff;
+  --border: #26262c;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search,
+.cart,
+.profile {
+  position: relative;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  transition: 0.2s;
+}
+
+.search:hover,
+.cart:hover,
+.profile:hover {
+  color: var(--text);
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: var(--accent);
+  color: #000;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+/* HERO */
+.hero {
+  padding: 60px 32px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin: 0 0 10px 0;
+}
+
+.hero p {
+  color: var(--muted);
+}
+
+/* SECTION */
+.section {
+  padding: 40px 32px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* PRODUCT SCROLL */
+.product-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.product-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.product-row::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+/* PRODUCT CARD */
+.product {
+  min-width: 220px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  transition: 0.2s;
+}
+
+/* Обёртка для изображения */
+.product-image {
+  width: 100%;
+  height: 180px;          /* фиксированная высота */
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+/* Само изображение */
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* сохраняет пропорции */
+}
+
+
+.product-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product-price {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.product-btn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.product-btn:active {
+  transform: scale(0.97);
+}
+
+/* FOOTER */
+.footer {
+  padding: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* SEARCH */
+.search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-search{
+    border: none;
+    background-color: #26262c;
+    outline: none;
+    border-radius: 6px;
+    padding: 2px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 230px;
+}
+
+.left-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-search{
+    border: none;
+    background: none;
+    outline: none;
+    height: 24px;
+    color: #f5f5f7;
+    font-size: 14px;
+}
+
+.right-search{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  /* HEADER становится колонкой */
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  /* Навигация превращается в горизонтальный скролл */
+  .nav {
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 6px;
+  }
+
+  .nav a {
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  /* Блок справа */
+  .header-actions {
+    justify-content: space-between;
+  }
+
+  /* Поиск на всю ширину */
+  .main-search {
+    width: 100%;
+  }
+
+  .input-search {
+    width: 100%;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 40px 16px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 24px 16px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  /* Карточки меньше */
+  .product {
+    min-width: 160px;
+  }
+
+  .product img {
+    height: 140px;
+    object-fit: cover;
+  }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo">WAKA OFF KAZAKH</div>
+
+  <div class="nav">
+    <a href="/index.html">Главная</a>
+    <a href="/consultation.html">Консультация</a>
+    <a href="/skids.html">Скидки</a>
+    <a href="/support.html">Поддержка</a>
+    <a href="/about.html">О нас</a>
+  </div>
+
+  <div class="header-actions">
+
+    <div class="search">
+        <div class="main-search">
+            <div class="left-search">
+                <input type="text" class="input-search">
+            </div>
+            <div class="right-search">
+                <span>
+                    <img src="/img/search-svgrepo-com.svg" alt="Поиск" width="16px" >
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile">
+        <div class="profile-icon">
+            <img src="/img/profile-1336-svgrepo-com.svg" alt="" width="18px">
+        </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="hero">
+  <h1>Официальный магазин сигарет</h1>
+  <p>Электронные и обычные сигареты с доставкой</p>
+</div>
+
+<!-- ПОПУЛЯРНЫЕ -->
+<div class="section">
+  <div class="section-title">🔥 Популярные</div>
+  <div class="product-row" id="popular"></div>
+</div>
+
+<!-- НОВИНКИ -->
+<div class="section">
+  <div class="section-title">🆕 Новинки</div>
+  <div class="product-row" id="new"></div>
+</div>
+
+<!-- ЭЛЕКТРОННЫЕ -->
+<div class="section">
+  <div class="section-title">💨 Электронные сигареты</div>
+  <div class="product-row" id="vape"></div>
+</div>
+
+<!-- ОБЫЧНЫЕ -->
+<div class="section">
+  <div class="section-title">🚬 Обычные сигареты</div>
+  <div class="product-row" id="classic"></div>
+</div>
+
+<div class="footer">
+  © 2026 WAKA OFF KAZAKH — Все права защищены
+</div>
+
+<script>
+const products = [
+  // Электронные сигареты (Vape) - Популярное и Новинки
+  {name:"WAKA Burst", price:11500, img:"/img/WAKA Burst.webp", category:"vape", popular:true},
+  {name:"Flonq Roqy 40 000", price:12500, img:"/img/Flonq Roqy 40 000.webp", category:"vape", popular:true},
+  {name:"Geek Bar Pulse X", price:10500, img:"/img/Geek Bar Pulse X.webp", category:"vape", popular:true, new:true},
+  {name:"Lost Mary Ultrasonic 35K", price:11000, img:"/img/Lost Mary Ultrasonic 35K.webp", category:"vape", popular:true, new:true},
+  {name:"Elf Bar GH 23000", price:9800, img:"/img/Elf Bar GH 23000.webp", category:"vape", popular:true},
+  {name:"Nexa Ultra 50 000", price:13500, img:"/img/Nexa Ultra 50 000.webp", category:"vape", popular:true},
+  {name:"Waka SoPro PA10000", price:8000, img:"/img/Waka SoPro PA10000.webp", category:"vape", popular:true},
+  
+  // POD-системы (Многоразовые)
+  {name:"Vaporesso XROS 5", price:14500, img:"/img/Vaporesso XROS 5.webp", category:"vape", popular:true, new:true},
+  {name:"OXVA XLIM Pro 3", price:15200, img:"/img/OXVA XLIM Pro 3.webp", category:"vape", popular:true, new:true},
+  {name:"Voopoo Vmate E2", price:16800, img:"/img/Voopoo Vmate E2.webp", category:"vape", popular:true, new:true},
+  {name:"Uwell Caliburn G4 Pro", price:13900, img:"/img/Uwell Caliburn G4 Pro.webp", category:"vape", popular:true},
+  {name:"Smoant Pasito Mini", price:11500, img:"/img/Smoant Pasito Mini.jpg", category:"vape", popular:true},
+  {name:"Santi 2 (Smoant)", price:12800, img:"/img/Santi 2 (Smoant).png", category:"vape", new:true},
+  {name:"Nevoks Feelin A1", price:11200, img:"/img/Nevoks Feelin A1.jpg", category:"vape"},
+  {name:"GeekVape Wenax Q Pro", price:12500, img:"/img/GeekVape Wenax Q Pro.jpg", category:"vape"},
+  {name:"Rincoe Jellybox V3", price:8500, img:"/img/Rincoe Jellybox V3.webp", category:"vape"},
+
+  // Классические сигареты (Цена за пачку)
+  {name:"Marlboro Red / Gold", price:950, img:"/img/Marlboro Gold.jpeg", category:"classic", popular:true},
+  {name:"Parliament Night Blue", price:1100, img:"/img/Parliament Night Blue.jpg", category:"classic", popular:true},
+  {name:"Winston Blue", price:850, img:"/img/Winston Blue.jpg", category:"classic", popular:true},
+  {name:"Kent Crystal", price:900, img:"/img/Kent Crystal.webp", category:"classic", popular:true},
+  {name:"Camel Yellow", price:820, img:"/img/Camel Yellow.webp", category:"classic", popular:true},
+  {name:"Chapman Red", price:1250, img:"/img/Chapman Red.webp", category:"classic", popular:true, new:true},
+  {name:"Parliament Carat", price:1350, img:"/img/Parliament Carat.jpg", category:"classic", new:true},
+  {name:"Winston XS Plus", price:920, img:"/img/Winston XS Plus.webp", category:"classic", new:true},
+  {name:"Marlboro Vista Garden Capsule", price:1050, img:"/img/Marlboro Vista Garden Capsule.jpg", category:"classic", new:true},
+  {name:"Sobranie", price:1500, img:"/img/Sobranie.webp", category:"classic"},
+  {name:"Mackintosh", price:4500, img:"/img/Mackintosh.jpg", category:"classic"},
+  {name:"Sioux", price:1600, img:"/img/Sioux.jpg", category:"classic"},
+  {name:"Senator", price:1400, img:"/img/Senator.jpg", category:"classic"},
+  {name:"Richmond", price:1600, img:"/img/Richmond.webp", category:"classic"},
+  {name:"Corsar", price:1850, img:"/img/Corsar.jpg", category:"classic"},
+  {name:"Harvest", price:1550, img:"/img/Harvest.webp", category:"classic"},
+
+  // Системы нагрева и прочее
+  {name:"Lost Mary Tappo", price:6500, img:"/img/Lost Mary Tappo.webp", category:"vape", popular:true},
+  {name:"IQOS ILUMA Prime", price:42000, img:"/img/IQOS ILUMA Prime.webp", category:"vape", new:true},
+  {name:"Ploom X Advanced", price:18000, img:"/img/Ploom X Advanced.jpg", category:"vape", new:true},
+  
+  // Дополнительные одноразки
+  {name:"REIGN BAR Mana 50K", price:14500, img:"/img/REIGN BAR Mana 50K.png", category:"vape", new:true},
+  {name:"Waka Mirror 2", price:8500, img:"/img/Waka Mirror 2.webp", category:"vape", new:true},
+  {name:"InstaFill 20 000", price:10500, img:"/img/InstaFill 20 000.webp", category:"vape"},
+  {name:"Raz DC25000", price:11200, img:"/img/Raz DC25000.jpg", category:"vape"},
+  {name:"Snoopy Smoke Extra Tank", price:9500, img:"/img/Snoopy Smoke Extra Tank.jpg", category:"vape"},
+  {name:"Off-Stamp SW9000", price:8800, img:"/img/Off-Stamp SW9000.webp", category:"vape"},
+  {name:"Fumot RandM Digital Box 12 000", price:7500, img:"/img/Fumot RandM Digital Box 12 000.webp", category:"vape"}
+];
+
+function render(sectionId, filterFn) {
+  const container = document.getElementById(sectionId);
+
+  products.filter(filterFn).forEach(product => {
+    const el = document.createElement("div");
+    el.className = "product";
+
+    el.innerHTML = `
+      <div class="product-image">
+        <img src="${product.img}">
+      </div>
+
+      <div class="product-name">${product.name}</div>
+      <div class="product-price">${product.price.toLocaleString("ru-RU")} тг</div>
+      <button class="product-btn">Купить</button>
+    `;
+
+    const button = el.querySelector(".product-btn");
+
+    button.addEventListener("click", () => {
+
+      // сохраняем выбранный товар
+      localStorage.setItem("waka_order", JSON.stringify({
+        name: product.name,
+        price: product.price,
+        img: product.img
+      }));
+
+      // переходим на страницу заказа
+      window.location.href = "anketa.html"; // УКАЖИ ПРАВИЛЬНЫЙ ПУТЬ
+    });
+
+    container.appendChild(el);
+  });
+}
+
+render("popular", p => p.popular);
+render("new", p => p.new);
+render("vape", p => p.category === "vape");
+render("classic", p => p.category === "classic");
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cartCount").textContent = cart.length;
+}
+
+updateCartCount();
+</script>
+
+</body>
+</html>
